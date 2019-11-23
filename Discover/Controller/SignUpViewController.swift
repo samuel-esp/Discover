@@ -12,23 +12,83 @@ import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var errorTextField: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        handleTextField()
+        handleCorrectPasswords()
         // Do any additional setup after loading the view.
+    }
+    
+    func handleTextField(){
+        
+        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        confirmPasswordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        
+    }
+    
+    func handleCorrectPasswords(){
+        
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.passwordDidMatch), for: UIControl.Event.editingChanged)
+        confirmPasswordTextField.addTarget(self, action: #selector(SignUpViewController.passwordDidMatch), for: UIControl.Event.editingChanged)
+        
+    }
+    
+    @objc func passwordDidMatch(){
+        
+        let password = passwordTextField.text
+        let confirmPassword = confirmPasswordTextField.text
+        
+        if(password==confirmPassword){
+            self.errorTextField.text = ""
+        }else{
+            self.errorTextField.text = "Passwords don't match"
+            signUpButton.isEnabled = false
+            signUpButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        }
+        
+        
+    }
+    
+    @objc func textFieldDidChange(){
+        
+        guard let username = usernameTextField.text, !username.isEmpty,
+              let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty,
+              let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty else{
+                signUpButton.isEnabled = false
+                signUpButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+                return
+        }
+        
+        signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signUpButton.isEnabled = true
+        
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: "user@gmail.com", password: "1234", completion: { (user: AuthDataResult?, error: Error?) in
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user: AuthDataResult?, error: Error?) in
             if (error != nil) {
+                self.errorTextField.text = error?.localizedDescription
+                print(error?.localizedDescription as Any)
                 return //escaping the method if the authentication got an error
             }
-            
+            print(user as Any)
             let userID = user?.user.uid //create an userID for my new user
             let databaseRoot = Database.database().reference() //taking the database reference
             let databaseChildUser = databaseRoot.child("users").child(userID!) //appending the users section and the new user to my database
-            databaseChildUser.setValue(["username": "username", "email": "email"]) //storing the data
+            databaseChildUser.setValue(["username": self.usernameTextField.text, "email": self.emailTextField.text]) //storing the data
         })
         
     }
