@@ -22,9 +22,15 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        emailTextField.becomeFirstResponder()
+        signUpButton.isEnabled = false
         handleTextField()
         handleCorrectPasswords()
+        usernameTextField.setLeftPaddingPoints(10)
+        passwordTextField.setLeftPaddingPoints(10)
+        confirmPasswordTextField.setLeftPaddingPoints(10)
+        emailTextField.setLeftPaddingPoints(10)
         // Do any additional setup after loading the view.
     }
     
@@ -103,4 +109,17 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
+
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
 }
