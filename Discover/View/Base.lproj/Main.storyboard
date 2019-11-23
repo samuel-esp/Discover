@@ -60,7 +60,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eVc-wy-67o" kind="show" id="P16-BI-Vja"/>
+                                            <segue destination="eVc-wy-67o" kind="show" identifier="signUp" id="P16-BI-Vja"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -213,9 +213,6 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="aeI-aj-tYt" kind="presentation" id="VZs-oE-fIV"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -384,7 +381,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="aeI-aj-tYt" kind="presentation" id="G6M-8r-5aa"/>
+                                            <action selector="signUpPressed:" destination="eVc-wy-67o" eventType="touchUpInside" id="A77-9c-eHJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -495,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ij-3b-TAB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="581"/>
+            <point key="canvasLocation" x="1183" y="539"/>
         </scene>
         <!--Home-->
         <scene sceneID="8ok-Nt-Xx9">
@@ -571,6 +568,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="aeI-aj-tYt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mek-gC-sx7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
@@ -601,7 +599,6 @@
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VZs-oE-fIV"/>
-        <segue reference="tzD-cb-JnZ"/>
+        <segue reference="tHx-EE-suy"/>
     </inferredMetricsTieBreakers>
 </document>

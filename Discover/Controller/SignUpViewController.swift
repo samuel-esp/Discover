@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -16,7 +18,21 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signUpPressed(_ sender: Any) {
+        
+        Auth.auth().createUser(withEmail: "user@gmail.com", password: "1234", completion: { (user: AuthDataResult?, error: Error?) in
+            if (error != nil) {
+                return //escaping the method if the authentication got an error
+            }
+            
+            let userID = user?.user.uid //create an userID for my new user
+            let databaseRoot = Database.database().reference() //taking the database reference
+            let databaseChildUser = databaseRoot.child("users").child(userID!) //appending the users section and the new user to my database
+            databaseChildUser.setValue(["username": "username", "email": "email"]) //storing the data
+        })
+        
+    }
+    
     /*
     // MARK: - Navigation
 

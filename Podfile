@@ -11,6 +11,7 @@ target 'Discover' do
   pod 'Firebase/Analytics'
   # add pods for any other desired Firebase products
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
  # https://firebase.google.com/docs/ios/setup#available-pods	
 
   target 'DiscoverTests' do
