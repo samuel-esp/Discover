@@ -30,19 +30,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        isUserLogged()
     }
     
-    
-    func isUserLogged() -> Void {
-        
-        if(Auth.auth().currentUser != nil){
-            self.performSegue(withIdentifier: "signInSegue", sender: self)
-            return
-        }
-        
-        return
-    }
     
     func handleTextField(){
         

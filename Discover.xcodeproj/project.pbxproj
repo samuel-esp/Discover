@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40349218238AE5FC0049E791 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40349217238AE5FC0049E791 /* LaunchScreenViewController.swift */; };
 		407760EE23883A5200A8398F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407760ED23883A5200A8398F /* AppDelegate.swift */; };
 		407760F023883A5200A8398F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407760EF23883A5200A8398F /* SceneDelegate.swift */; };
 		407760F523883A5200A8398F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407760F323883A5200A8398F /* Main.storyboard */; };
 		407760F723883A6200A8398F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407760F623883A6200A8398F /* Assets.xcassets */; };
-		407760FA23883A6200A8398F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407760F823883A6200A8398F /* LaunchScreen.storyboard */; };
 		4077610523883A6200A8398F /* DiscoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077610423883A6200A8398F /* DiscoverTests.swift */; };
 		4077611023883A6300A8398F /* DiscoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077610F23883A6300A8398F /* DiscoverUITests.swift */; };
 		4077612023883C2300A8398F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077611F23883C2300A8398F /* SignInViewController.swift */; };
@@ -50,12 +50,12 @@
 		13FACAB5965660E55456E6C5 /* Pods-Discover-DiscoverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discover-DiscoverUITests.release.xcconfig"; path = "Target Support Files/Pods-Discover-DiscoverUITests/Pods-Discover-DiscoverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1A36A68F4432B404ED0CA2EA /* Pods_DiscoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		216DA6C8E617EF542924710A /* Pods-Discover-DiscoverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discover-DiscoverUITests.debug.xcconfig"; path = "Target Support Files/Pods-Discover-DiscoverUITests/Pods-Discover-DiscoverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		40349217238AE5FC0049E791 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		407760EA23883A5200A8398F /* Discover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407760ED23883A5200A8398F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407760EF23883A5200A8398F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		407760F423883A5200A8398F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		407760F623883A6200A8398F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		407760F923883A6200A8398F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		407760FB23883A6200A8398F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4077610023883A6200A8398F /* DiscoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4077610423883A6200A8398F /* DiscoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTests.swift; sourceTree = "<group>"; };
@@ -184,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				407760F323883A5200A8398F /* Main.storyboard */,
-				407760F823883A6200A8398F /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +200,7 @@
 				40C971E323894CF6006AA49E /* NotificationViewController.swift */,
 				40C971E523894D5B006AA49E /* HomeViewController.swift */,
 				40C971E823894F3B006AA49E /* DiscoverViewController.swift */,
+				40349217238AE5FC0049E791 /* LaunchScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -325,7 +325,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407760FA23883A6200A8398F /* LaunchScreen.storyboard in Resources */,
 				40C9723923898726006AA49E /* GoogleService-Info.plist in Resources */,
 				407760F723883A6200A8398F /* Assets.xcassets in Resources */,
 				407760F523883A5200A8398F /* Main.storyboard in Resources */,
@@ -483,6 +482,7 @@
 				40C971E423894CF6006AA49E /* NotificationViewController.swift in Sources */,
 				407760F023883A5200A8398F /* SceneDelegate.swift in Sources */,
 				40C971DE238935CE006AA49E /* SignUpViewController.swift in Sources */,
+				40349218238AE5FC0049E791 /* LaunchScreenViewController.swift in Sources */,
 				4077612023883C2300A8398F /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,14 +525,6 @@
 				407760F423883A5200A8398F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		407760F823883A6200A8398F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				407760F923883A6200A8398F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

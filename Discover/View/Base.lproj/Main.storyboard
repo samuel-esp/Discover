@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="utI-eE-Bi7">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,6 +7,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="2eN-Zl-x3Z">
+            <objects>
+                <viewController id="utI-eE-Bi7" customClass="LaunchScreenViewController" customModule="Discover" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0b-Ur-7Fw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go1-3U-u43">
+                                <rect key="frame" x="107" y="413.66666666666669" width="200" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="go1-3U-u43" firstAttribute="centerX" secondItem="E0b-Ur-7Fw" secondAttribute="centerX" id="Ds2-bO-oFb"/>
+                            <constraint firstItem="go1-3U-u43" firstAttribute="centerY" secondItem="E0b-Ur-7Fw" secondAttribute="centerY" id="p0d-0t-DlX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mth-uJ-EXy"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="initialSegue" id="VFf-fb-vTU"/>
+                        <segue destination="aeI-aj-tYt" kind="show" identifier="launchScreenSegue" id="SGK-Er-Ms3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5d-eC-CAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1616" y="115"/>
+        </scene>
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -121,6 +152,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wBP-Cy-Mbt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cr-nE-dbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="-765"/>
+            <point key="canvasLocation" x="1307" y="-740"/>
         </scene>
         <!--Home-->
         <scene sceneID="z7H-GD-bew">
@@ -772,9 +804,9 @@
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UsA-Xp-pxz"/>
-        <segue reference="Uw8-qk-dMc"/>
-        <segue reference="qPJ-6s-L3Z"/>
-        <segue reference="tzD-cb-JnZ"/>
+        <segue reference="SGK-Er-Ms3"/>
+        <segue reference="P16-BI-Vja"/>
+        <segue reference="dwn-xq-qy6"/>
+        <segue reference="VFf-fb-vTU"/>
     </inferredMetricsTieBreakers>
 </document>
