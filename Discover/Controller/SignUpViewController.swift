@@ -95,6 +95,7 @@ class SignUpViewController: UIViewController {
             let databaseRoot = Database.database().reference() //taking the database reference
             let databaseChildUser = databaseRoot.child("users").child(userID!) //appending the users section and the new user to my database
             databaseChildUser.setValue(["username": self.usernameTextField.text, "email": self.emailTextField.text]) //storing the data
+            self.performSegue(withIdentifier: "signUpSegue", sender: self)
         })
         
     }
