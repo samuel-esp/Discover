@@ -25,9 +25,23 @@ class SignInViewController: UIViewController {
         passwordTextField.setLeftPaddingPoints(10)
         signInButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
         handleTextField()
-        
-        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        isUserLogged()
+    }
+    
+    
+    func isUserLogged() -> Void {
+        
+        if(Auth.auth().currentUser != nil){
+            self.performSegue(withIdentifier: "signInSegue", sender: self)
+            return
+        }
+        
+        return
     }
     
     func handleTextField(){
@@ -55,6 +69,7 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signInButtonPressed(_ sender: Any) {
+        
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if(error != nil){

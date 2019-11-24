@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
         
         emailTextField.becomeFirstResponder()
         signUpButton.isEnabled = false
+        signUpButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
         handleTextField()
         handleCorrectPasswords()
         usernameTextField.setLeftPaddingPoints(10)
@@ -57,6 +58,8 @@ class SignUpViewController: UIViewController {
         
         if(password==confirmPassword){
             self.errorTextField.text = ""
+            signUpButton.isEnabled = true
+            signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         }else{
             self.errorTextField.text = "Passwords don't match"
             signUpButton.isEnabled = false
